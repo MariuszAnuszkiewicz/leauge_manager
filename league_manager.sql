@@ -1,0 +1,70 @@
+#CREATE DATABASE league_manager;
+#USE league_manager;
+
+/*
+CREATE TABLE IF NOT EXISTS tmp_teams_combinations (
+
+ id INT(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+ team_first VARCHAR(125) NOT NULL,
+ team_second VARCHAR(125) NOT NULL
+ 
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+*/
+
+/*
+CREATE TABLE IF NOT EXISTS players (
+
+ id INT(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+ name VARCHAR(255) NOT NULL,
+ pkt INT(11)
+ 
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+*/
+
+/*
+CREATE TABLE IF NOT EXISTS scores (
+
+ id INT(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+ teams_fk INT(11) NOT NULL,
+ teams VARCHAR(60) NOT NULL,
+ rounds_teams_fk INT(11) NOT NULL,
+ result VARCHAR(15) NOT NULL,
+ win INT(11) NOT NULL,
+ loses INT(11) NOT NULL,
+ pkt INT(11) NOT NULL,
+ FOREIGN KEY (teams_fk) REFERENCES teams (id),
+ FOREIGN KEY (rounds_teams_fk) REFERENCES rounds_teams (id)
+ 
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+*/
+
+/*
+CREATE TABLE IF NOT EXISTS results (
+
+   id INT(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+	rounds_teams_fk INT(11) NOT NULL,
+	result VARCHAR(50) NOT NULL,
+	FOREIGN KEY (rounds_teams_fk) REFERENCES rounds_teams (id)
+	
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+*/
+ 
+ /*
+CREATE TABLE IF NOT EXISTS rounds_teams (
+
+	id INT(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+	team_first VARCHAR(125) NOT NULL,
+	team_second VARCHAR(125) NOT NULL
+	
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+*/
+
+/*
+CREATE TABLE IF NOT EXISTS teams (
+
+	id INT(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+	name VARCHAR(125) NOT NULL
+	
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+*/
+
